@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>nvAlt Find / Timestamp</string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>99D3ECF7-3A8A-4DE5-BCCA-4AB5FCBEDBDE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F143ADA8-C078-417F-8466-195008817E10</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>E408E9CF-A276-4F51-A75E-892B88DFEF27</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E4822D25-9768-49D4-A83D-4C02CA27943C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Frank Chen</string>
+	<key>description</key>
+	<string>Find / Timestamp search by keyword</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>nvALT - Find / Timestamp</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>nv</string>
+				<key>subtext</key>
+				<string>Search or by this note</string>
+				<key>text</key>
+				<string>nvALT</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>99D3ECF7-3A8A-4DE5-BCCA-4AB5FCBEDBDE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>q="{query}"
+len=${#q}
+if [ $len -eq 0 ];
+then
+	nv=""
+else
+	nv="{query}"
+fi
+	
+open "nvalt://find/$nv"</string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F143ADA8-C078-417F-8466-195008817E10</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>nd</string>
+				<key>subtext</key>
+				<string>Notational by date</string>
+				<key>text</key>
+				<string>Notational</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>E408E9CF-A276-4F51-A75E-892B88DFEF27</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>q="{query}"
+len=${#q}
+if [ $len -eq 0 ];
+then
+	nv="$(date +'%-m.%d')"
+else
+	nv="$(date +'%-m.%d') {query}"
+fi
+	
+open "nvalt://find/$nv"</string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E4822D25-9768-49D4-A83D-4C02CA27943C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow searches nvALT for text and makes sure it becomes the front window to allow you to interact with it.</string>
+	<key>uidata</key>
+	<dict>
+		<key>99D3ECF7-3A8A-4DE5-BCCA-4AB5FCBEDBDE</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>E408E9CF-A276-4F51-A75E-892B88DFEF27</key>
+		<dict>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>E4822D25-9768-49D4-A83D-4C02CA27943C</key>
+		<dict>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>F143ADA8-C078-417F-8466-195008817E10</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>frankc.net</string>
+</dict>
+</plist>
