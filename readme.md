@@ -15,25 +15,25 @@ I started adding dates to note titles to keep a consistent sort to content. This
 
 # Alfred Commands
 
-1.  \> ```nv```  
+1.  \> ```nv```
     **Result** Brings up nvAlt
 
-2. \> ```nv Hello World```  
-  **Result** Brings up nvAlt with a search "Hello World"  
-    ![Hello World](nv.png "Searching for Hello World")  
-  **Brings up**  
+2. \> ```nv Hello World```
+  **Result** Brings up nvAlt with a search "Hello World"
+    ![Hello World](nv.png "Searching for Hello World")
+  **Brings up**
     ![Hello World](nv-hello-w.png "Result for Hello World")
 
 -----
 
 
-1. \> ```nd```  
-    **Result** Brings up nvAlt with today's agenda on it. If you're like me, you like to make a lightweight agenda for your day in nvALT. It's fast and easy to read, unlike my outlook calendar!  
+1. \> ```nd```
+    **Result** Brings up nvAlt with today's agenda on it. If you're like me, you like to make a lightweight agenda for your day in nvALT. It's fast and easy to read, unlike my outlook calendar!
 
-4. \> ```nd Hello World```  
-  **Result** Brings up nvAlt with a search on today's date and "Hello World"  
-    ![Hello World](nd-hello.png "Searching for Hello World prefixed by today's date")  
-    **Turns into**  
+4. \> ```nd Hello World```
+  **Result** Brings up nvAlt with a search on today's date and "Hello World"
+    ![Hello World](nd-hello.png "Searching for Hello World prefixed by today's date")
+    **Turns into**
     ![Hello World](nd-hello-q.png "Result for Hello World prefixed by today's date")
 
 Note: Dates are in format "%m.%d" because I typically don't write dates like this in my notes.
@@ -42,5 +42,6 @@ Note: Dates are in format "%m.%d" because I typically don't write dates like thi
 
 - Zoom Icon <http://thenounproject.com/term/zoom/15441/>
 - nvALT <http://brettterpstra.com/projects/nvalt/>
+- nvAlt Search Workflow by fruityh1g <http://bit.ly/1bBQttg>
 
 I can be found at <http://frankc.net> and on [twitter](https://twitter.com/frankc)

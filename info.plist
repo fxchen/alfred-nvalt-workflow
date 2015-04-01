@@ -8,11 +8,57 @@
 	<string>Internet</string>
 	<key>connections</key>
 	<dict>
+		<key>5299EBD1-9AC8-43CB-8399-5E58D06A0ADC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8CA383ED-8ED7-4D3B-BE5F-86EEB616BCF2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>41098547-0961-4097-A8C7-FAF5C252C0F7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>99D3ECF7-3A8A-4DE5-BCCA-4AB5FCBEDBDE</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>F143ADA8-C078-417F-8466-195008817E10</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>41098547-0961-4097-A8C7-FAF5C252C0F7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C751AB3B-47D3-43DD-8011-539DED0B3494</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7F425F95-6CF2-4B0A-9F11-431D3A876EB2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>41098547-0961-4097-A8C7-FAF5C252C0F7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -24,6 +70,14 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>E4822D25-9768-49D4-A83D-4C02CA27943C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>41098547-0961-4097-A8C7-FAF5C252C0F7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -91,14 +145,61 @@ open "nvalt://find/$nv"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>q="{query}"
+len=${#q}
+if [ $len -eq 0 ];
+then
+	nv="$(gdate -d "yesterday" +'%-m.%-d')"
+else
+	nv="$(gdate -d "yesterday" +'%-m.%-d') {query}"
+fi
+	
+open "nvalt://find/$nv"</string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7F425F95-6CF2-4B0A-9F11-431D3A876EB2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>ny</string>
+				<key>subtext</key>
+				<string>Notational by yesterday's date</string>
+				<key>text</key>
+				<string>Open Notational</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C751AB3B-47D3-43DD-8011-539DED0B3494</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>keyword</key>
 				<string>nd</string>
 				<key>subtext</key>
-				<string>Notational by date</string>
+				<string>Notational by today's date</string>
 				<key>text</key>
-				<string>Notational</string>
+				<string>Open Notational</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -119,9 +220,9 @@ open "nvalt://find/$nv"</string>
 len=${#q}
 if [ $len -eq 0 ];
 then
-	nv="$(date +'%-m.%d')"
+	nv="$(date +'%-m.%-d')"
 else
-	nv="$(date +'%-m.%d') {query}"
+	nv="$(date +'%-m.%-d') {query}"
 fi
 	
 open "nvalt://find/$nv"</string>
@@ -135,30 +236,123 @@ open "nvalt://find/$nv"</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>q="{query}"
+len=${#q}
+if [ $len -eq 0 ];
+then
+	nv="$(gdate -d "tomorrow" +'%-m.%-d')"
+else
+	nv="$(gdate -d "tomorrow" +'%-m.%-d') {query}"
+fi
+	
+open "nvalt://find/$nv"</string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8CA383ED-8ED7-4D3B-BE5F-86EEB616BCF2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>nt</string>
+				<key>subtext</key>
+				<string>Notational by tomorrow's date</string>
+				<key>text</key>
+				<string>Open Notational</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5299EBD1-9AC8-43CB-8399-5E58D06A0ADC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+tell application "nvALT" to activate
+delay 0.1
+tell application "System Events" to tell process "nvALT"
+	keystroke "l" using command down
+end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>41098547-0961-4097-A8C7-FAF5C252C0F7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>This workflow searches nvALT for text and makes sure it becomes the front window to allow you to interact with it.</string>
 	<key>uidata</key>
 	<dict>
+		<key>41098547-0961-4097-A8C7-FAF5C252C0F7</key>
+		<dict>
+			<key>ypos</key>
+			<real>630</real>
+		</dict>
+		<key>5299EBD1-9AC8-43CB-8399-5E58D06A0ADC</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>7F425F95-6CF2-4B0A-9F11-431D3A876EB2</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>8CA383ED-8ED7-4D3B-BE5F-86EEB616BCF2</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
 		<key>99D3ECF7-3A8A-4DE5-BCCA-4AB5FCBEDBDE</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>30</real>
+		</dict>
+		<key>C751AB3B-47D3-43DD-8011-539DED0B3494</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
 		</dict>
 		<key>E408E9CF-A276-4F51-A75E-892B88DFEF27</key>
 		<dict>
 			<key>ypos</key>
-			<real>220</real>
+			<real>320</real>
 		</dict>
 		<key>E4822D25-9768-49D4-A83D-4C02CA27943C</key>
 		<dict>
 			<key>ypos</key>
-			<real>220</real>
+			<real>320</real>
 		</dict>
 		<key>F143ADA8-C078-417F-8466-195008817E10</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>30</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
