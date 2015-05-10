@@ -27,11 +27,49 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>71FC87F4-D992-47A3-AAC7-72D4235B5BA7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E4822D25-9768-49D4-A83D-4C02CA27943C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>41098547-0961-4097-A8C7-FAF5C252C0F7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>99D3ECF7-3A8A-4DE5-BCCA-4AB5FCBEDBDE</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>F143ADA8-C078-417F-8466-195008817E10</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>41098547-0961-4097-A8C7-FAF5C252C0F7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>A2D6B531-FAE8-4A0E-B2F7-4C31D3D0CB76</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8CA383ED-8ED7-4D3B-BE5F-86EEB616BCF2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -84,6 +122,25 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>F8048380-6E24-4D06-BB82-A02DC8DD307D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7F425F95-6CF2-4B0A-9F11-431D3A876EB2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>41098547-0961-4097-A8C7-FAF5C252C0F7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Frank Chen</string>
@@ -119,6 +176,8 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -130,7 +189,7 @@ then
 else
 	nv="{query}"
 fi
-	
+
 open "nvalt://find/$nv"</string>
 				<key>type</key>
 				<integer>5</integer>
@@ -139,32 +198,6 @@ open "nvalt://find/$nv"</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>F143ADA8-C078-417F-8466-195008817E10</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>q="{query}"
-len=${#q}
-if [ $len -eq 0 ];
-then
-	nv="$(gdate -d "yesterday" +'%-m.%-d')"
-else
-	nv="$(gdate -d "yesterday" +'%-m.%-d') {query}"
-fi
-	
-open "nvalt://find/$nv"</string>
-				<key>type</key>
-				<integer>5</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>7F425F95-6CF2-4B0A-9F11-431D3A876EB2</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -192,6 +225,61 @@ open "nvalt://find/$nv"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>q="{query}"
+len=${#q}
+if [ $len -eq 0 ];
+then
+	nv="$(gdate -d "yesterday" +'%-m.%-d')"
+else
+	nv="$(gdate -d "yesterday" +'%-m.%-d') {query}"
+fi
+
+open "nvalt://find/$nv"</string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7F425F95-6CF2-4B0A-9F11-431D3A876EB2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>16</integer>
+				<key>hotmod</key>
+				<integer>1441792</integer>
+				<key>hotstring</key>
+				<string>Y</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>F8048380-6E24-4D06-BB82-A02DC8DD307D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>keyword</key>
@@ -213,6 +301,8 @@ open "nvalt://find/$nv"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -220,11 +310,11 @@ open "nvalt://find/$nv"</string>
 len=${#q}
 if [ $len -eq 0 ];
 then
-	nv="$(date +'%-m.%-d')"
+	nv="$(gdate +'%-m.%-d')"
 else
-	nv="$(date +'%-m.%-d') {query}"
+	nv="$(gdate +'%-m.%-d') {query}"
 fi
-	
+
 open "nvalt://find/$nv"</string>
 				<key>type</key>
 				<integer>5</integer>
@@ -239,28 +329,29 @@ open "nvalt://find/$nv"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
+				<key>action</key>
 				<integer>0</integer>
-				<key>script</key>
-				<string>q="{query}"
-len=${#q}
-if [ $len -eq 0 ];
-then
-	nv="$(gdate -d "tomorrow" +'%-m.%-d')"
-else
-	nv="$(gdate -d "tomorrow" +'%-m.%-d') {query}"
-fi
-	
-open "nvalt://find/$nv"</string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>2</integer>
+				<key>hotmod</key>
+				<integer>1441792</integer>
+				<key>hotstring</key>
+				<string>D</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>8CA383ED-8ED7-4D3B-BE5F-86EEB616BCF2</string>
+			<string>71FC87F4-D992-47A3-AAC7-72D4235B5BA7</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -282,6 +373,61 @@ open "nvalt://find/$nv"</string>
 			<string>5299EBD1-9AC8-43CB-8399-5E58D06A0ADC</string>
 			<key>version</key>
 			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>q="{query}"
+len=${#q}
+if [ $len -eq 0 ];
+then
+	nv="$(gdate -d "tomorrow" +'%-m.%-d')"
+else
+	nv="$(gdate -d "tomorrow" +'%-m.%-d') {query}"
+fi
+
+open "nvalt://find/$nv"</string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8CA383ED-8ED7-4D3B-BE5F-86EEB616BCF2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>17</integer>
+				<key>hotmod</key>
+				<integer>1441792</integer>
+				<key>hotstring</key>
+				<string>T</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>A2D6B531-FAE8-4A0E-B2F7-4C31D3D0CB76</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -319,6 +465,11 @@ end alfred_script</string>
 			<key>ypos</key>
 			<real>490</real>
 		</dict>
+		<key>71FC87F4-D992-47A3-AAC7-72D4235B5BA7</key>
+		<dict>
+			<key>ypos</key>
+			<real>390</real>
+		</dict>
 		<key>7F425F95-6CF2-4B0A-9F11-431D3A876EB2</key>
 		<dict>
 			<key>ypos</key>
@@ -333,6 +484,11 @@ end alfred_script</string>
 		<dict>
 			<key>ypos</key>
 			<real>30</real>
+		</dict>
+		<key>A2D6B531-FAE8-4A0E-B2F7-4C31D3D0CB76</key>
+		<dict>
+			<key>ypos</key>
+			<real>570</real>
 		</dict>
 		<key>C751AB3B-47D3-43DD-8011-539DED0B3494</key>
 		<dict>
@@ -353,6 +509,11 @@ end alfred_script</string>
 		<dict>
 			<key>ypos</key>
 			<real>30</real>
+		</dict>
+		<key>F8048380-6E24-4D06-BB82-A02DC8DD307D</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
